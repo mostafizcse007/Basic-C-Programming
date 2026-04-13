@@ -39,11 +39,7 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     INTEGER = 258,
-     FLOAT = 259,
-     IDENTIFIER = 260,
-     KEYWORD = 261,
-     OPERATOR = 262
+     NUMBER = 258
    };
 #endif
 
