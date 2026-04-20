@@ -8,6 +8,10 @@ void yyerror(const char* s);
 %token NUMBER 
 
 %%
+stmt:
+
+    | stmt input 
+    ;
 input:
     expr '\n'      { printf("Result = %d\n",$1); }
     ;

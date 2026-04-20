@@ -286,14 +286,14 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 #define YY_END_OF_BUFFER 8
 static yyconst short int yy_accept[14] =
     {   0,
-        0,    0,    8,    5,    3,    4,    2,    1,    5,    1,
-        0,    6,    0
+        0,    0,    8,    4,    3,    6,    2,    1,    4,    1,
+        0,    5,    0
     } ;
 
 static yyconst int yy_ec[256] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    2,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    1,    1,    1,    1,    1,    1,    4,
         4,    4,    4,    1,    4,    1,    4,    5,    5,    5,
@@ -364,11 +364,11 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "part_1.l"
+#line 1 "calculator.l"
 #define INITIAL 0
-#line 2 "part_1.l"
-#include <stdlib.h>
-#include "part_1.tab.h"
+#line 2 "calculator.l"
+    #include "calculator.tab.h"
+    #include <stdlib.h>
 #line 373 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
@@ -520,7 +520,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 6 "part_1.l"
+#line 6 "calculator.l"
 
 #line 526 "lex.yy.c"
 
@@ -607,37 +607,37 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "part_1.l"
-{yylval = atoi(yytext); return NUMBER;}
+#line 7 "calculator.l"
+{ yylval = atoi(yytext); return NUMBER; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 8 "part_1.l"
+#line 8 "calculator.l"
 { return yytext[0]; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 9 "part_1.l"
-{       }
+#line 9 "calculator.l"
+{     }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 10 "part_1.l"
-{ return '\n'; }
+#line 10 "calculator.l"
+{ return yytext[0]; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 11 "part_1.l"
-{ return yytext[0]; }
+#line 11 "calculator.l"
+{ return 0; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 12 "part_1.l"
-{ return 0; }
+#line 12 "calculator.l"
+{ return '\n'; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 13 "part_1.l"
+#line 13 "calculator.l"
 ECHO;
 	YY_BREAK
 #line 644 "lex.yy.c"
@@ -1526,7 +1526,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 13 "part_1.l"
+#line 13 "calculator.l"
 
 
 int yywrap()
