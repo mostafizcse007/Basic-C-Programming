@@ -1,20 +1,20 @@
 %{
     #include "variable.tab.h"
     #include <stdlib.h>
+    #include <string.h>
 %}
 
 %%
-[a-z]           { yylval = yytext[0] - 'a'; return ID; }
-[0-9]+          { yylval = atoi(yytext); return NUMBER; }
-"="             { return '='; }
-";"             { return ';'; }
-[+\-*/()]       { return yytext[0]; }
-[ \t\r\n]       { }
-end             { return 0; }
-.               { return yytext[0]; }
+[a-zA-Z_][a-zA-Z0-9_]*   { yylval.str = strdup(yytext); return ID; }
+[0-9]+                   { yylval.num = atoi(yytext); return NUMBER; }
+[ \t\r\n]+               { /* ignore whitespace */ }
+"="                      { return '='; }
+";"                      { return ';'; }
+[+\-*/()]                { return yytext[0]; }
+.                        { return yytext[0]; }
 %%
 
-int yywrap()
+int yywrap(void)
 {
     return 1;
 }
